@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css")
+        link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.5.0/css/all.css")
+        title Todo App
+    body
+        nav.navbar.bg-dark.navbar-dark.mb-4
+          .container
+            a(href='/').navbar-brand Todo App
+        .container
+          .row
+            .col-md-4
+              .card
+                .card-header
+                  h5 Ajouter une tâche
+                .card-body
+                  form(action="/add", method="POST")
+                    .form-group
+                      label(for="todo") Ajouter une tâche:
+                      input(type="text", id="todo", name="todo").form-control
+                    button(type="submit").btn.btn-success.btn-block
+                      i.fas.fa-plus.pr-1
+                      b Ajouter
+            .col-md-8
+              table.table.table-striped
+                thead
+                  tr
+                    th(scope="col") Todo
+                    th(scope="col") Editer
+                    th(scope="col") Supprimer
+                tbody
+                  each todo in todos
+                    tr
+                      td(scope="row")= todo.title
+                      td
+                        a(href="/update/" + todo.id).btn.btn-danger.btn-sm
+                          i.fas.fa-pencil-alt
+                      td
+                        form(method="POST" action="/delete/" + todo.id + "?_method=DELETE")
+                          button(type="submit").btn.btn-info.btn-sm
+                            i.fas.fa-trash-alt

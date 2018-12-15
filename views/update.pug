@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css")
+        link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.5.0/css/all.css")
+        title Todo App
+    body
+        nav.navbar.bg-dark.navbar-dark.mb-4
+          .container
+            a(href='/').navbar-brand Todo App
+        .container
+          .row
+            .col-md-4
+              .card
+                .card-header
+                  h5 Editer la tâche #{todo.title}
+                .card-body
+                  form(method="POST", action="/update/" + todo.id + "?_method=PUT")
+                    .form-group
+                      label(for="todo") Editer une tâche:
+                      input(type="text", id="todo", name="title", value=todo.title).form-control
+                    button(type="submit").btn.btn-success.btn-block
+                      i.fas.fa-plus.pr-1
+                      b Editer
