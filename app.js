@@ -10,13 +10,13 @@ const port = process.env.PORT || 3000;
 
 // Database
 // mongoose.connect('mongodb://localhost/todoapp', {useNewUrlParser: true}).then(() => {
-mongoose.connect('mongodb://Garig:indiana31@ds129904.mlab.com:29904/garig')
+mongoose.connect('mongodb://Garig:indiana31@ds129904.mlab.com:29904/garig');
 // .then(() => {
 //     console.log('Connecté à la base de données')
 // });
 
 // Template engine
-app.set('view engine', 'pug')
+app.set('view engine', 'pug');
 
 // Body parser
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -32,4 +32,5 @@ app.use(favicon(__dirname + '/public/favicon.ico'))
 const index = require('./routes/index');
 app.use('/', index);
 
-app.listen(port, () => console.log("Serveur lancé sur http://"+port));
+// app.listen(port, () => console.log("Serveur lancé sur http://"+port));
+app.listen(port);
