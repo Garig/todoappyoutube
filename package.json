@@ -1,15 +1,15 @@
 {
   "name": "Todolist-Mongodb",
   "version": "1.0.0",
-  "description": "",
+  "description": "todoapp",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "node app.js",
     "dev": "nodemon app.js",
     "html2pug": "html2pug < html2pug.html > html2pug -f"
   },
   "keywords": [],
-  "author": "",
+  "author": "alexandre houriez",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
