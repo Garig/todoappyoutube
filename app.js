@@ -32,4 +32,4 @@ app.use(favicon(__dirname + '/public/favicon.ico'))
 const index = require('./routes/index');
 app.use('/', index);
 
-app.listen(port, hostname, () => console.log("Serveur lancé sur http://"+port));
+app.listen(port, () => console.log("Serveur lancé sur http://"+port));
