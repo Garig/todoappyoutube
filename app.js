@@ -26,9 +26,7 @@ const port = process.env.PORT || 3000;
 // }); 
 
 var mongoDB = "mongodb://test:test59@ds259742.mlab.com:59742/todoappyoutube";
-mongoose.connect(mongoDB, {
-    useMongoClient: true
-});
+mongoose.connect(mongoDB, {useNewUrlParser: true});
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
