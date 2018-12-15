@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "todoapp",
   "main": "app.js",
+  "engines": {
+    "node": "10.14.1"
+  },
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
