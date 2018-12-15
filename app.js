@@ -6,7 +6,7 @@ const app = express();
 const favicon = require('serve-favicon')
 
 const port = process.env.PORT || 3000;
-const hostname = "localhost";
+//const hostname = "localhost";
 
 // Database
 // mongoose.connect('mongodb://localhost/todoapp', {useNewUrlParser: true}).then(() => {
@@ -32,4 +32,4 @@ app.use(favicon(__dirname + '/public/favicon.ico'))
 const index = require('./routes/index');
 app.use('/', index);
 
-app.listen(port, hostname, () => console.log("Serveur lancé sur http://"+hostname+":"+port));
+app.listen(port, hostname, () => console.log("Serveur lancé sur http://"+port));
