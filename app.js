@@ -15,15 +15,22 @@ const port = process.env.PORT || 3000;
 //     console.log('Connecté à la base de données')
 // });
 
-var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } }, 
-replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } };
-var urlmongo = "mongodb://garig:indiana31@ds259742.mlab.com:59742/todoappyoutube"; 
-mongoose.connect(urlmongo, options);
-var db = mongoose.connection; 
-db.on('error', console.error.bind(console, 'Erreur lors de la connexion')); 
-db.once('open', function (){
-    console.log("Connexion à la base OK"); 
-}); 
+// var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } }, 
+// replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } };
+// var urlmongo = "mongodb://garig:indiana31@ds259742.mlab.com:59742/todoappyoutube"; 
+// mongoose.connect(urlmongo, options);
+// var db = mongoose.connection; 
+// db.on('error', console.error.bind(console, 'Erreur lors de la connexion')); 
+// db.once('open', function (){
+//     console.log("Connexion à la base OK"); 
+// }); 
+
+var mongoDB = "mongodb://garig:indiana31@ds259742.mlab.com:59742/todoappyoutube";
+mongoose.connect(mongoDB, {
+    useMongoClient: true
+});
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 // Template engine
 app.set('view engine', 'pug')
