@@ -9,7 +9,8 @@ const port = process.env.PORT || 3000;
 const hostname = "localhost";
 
 // Database
-mongoose.connect('mongodb://localhost/todoapp', {useNewUrlParser: true}).then(() => {
+// mongoose.connect('mongodb://localhost/todoapp', {useNewUrlParser: true}).then(() => {
+mongoose.connect('mongodb://Garig:indiana31@@ds129904.mlab.com:29904/garig', {useNewUrlParser: true}).then(() => {
     console.log('Connecté à la base de données')
 });
 
