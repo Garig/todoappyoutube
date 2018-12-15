@@ -17,7 +17,7 @@ const port = process.env.PORT || 3000;
 
 var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } }, 
 replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } };
-var urlmongo = "mongodb://Garig:indiana31@ds129904.mlab.com:29904/garig"; 
+var urlmongo = "mongodb://garig:indiana31@ds129904.mlab.com:29904/garig"; 
 mongoose.connect(urlmongo, options);
 var db = mongoose.connection; 
 db.on('error', console.error.bind(console, 'Erreur lors de la connexion')); 
@@ -42,5 +42,4 @@ app.use(favicon(__dirname + '/public/favicon.ico'))
 const index = require('./routes/index');
 app.use('/', index);
 
-// app.listen(port, () => console.log("Serveur lancé sur http://"+port));
-app.listen(port);
+app.listen(port, () => console.log("Serveur lancé sur http://"+port));
