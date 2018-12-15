@@ -17,7 +17,7 @@ const port = process.env.PORT || 3000;
 
 var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } }, 
 replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } };
-var urlmongo = "mongodb://garig:indiana31@ds129904.mlab.com:29904/garig"; 
+var urlmongo = "mongodb://garig:indiana31@ds259742.mlab.com:59742/todoappyoutube"; 
 mongoose.connect(urlmongo, options);
 var db = mongoose.connection; 
 db.on('error', console.error.bind(console, 'Erreur lors de la connexion')); 
